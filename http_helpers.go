@@ -10,6 +10,10 @@ import (
 // If not found, falls back to fallback.
 func MaxAgeHeader(resp *http.Response, fallback int) int {
 
+	if resp == nil {
+		return fallback
+	}
+
 	r, _ := regexp.Compile(`max-age=(\d+)`)
 	cacheControl := resp.Header.Get("Cache-Control")
 	submatch := r.FindStringSubmatch(cacheControl)
