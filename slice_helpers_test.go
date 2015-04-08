@@ -20,8 +20,8 @@ var _ = Describe("Slice helpers", func() {
 	Context("#UniqueInts", func() {
 
 		It("makes the slice unique", func() {
-			i := []string{1, 2, 3, 2, 4, 1, 5, 6}
-			Expect(ormtools.UniqueInts(i)).To(Equal([]string{1, 2, 3, 4, 5, 6}))
+			i := []int{1, 2, 3, 2, 4, 1, 5, 6}
+			Expect(ormtools.UniqueInts(i)).To(Equal([]int{1, 2, 3, 4, 5, 6}))
 		})
 
 	})
