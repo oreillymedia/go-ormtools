@@ -26,4 +26,13 @@ var _ = Describe("Slice helpers", func() {
 
 	})
 
+	Context("#UniqueInt64s", func() {
+
+		It("makes the slice unique", func() {
+			i := []int64{1, 2, 3, 2, 4, 1, 5, 6}
+			Expect(ormtools.UniqueInt64s(i)).To(Equal([]int64{1, 2, 3, 4, 5, 6}))
+		})
+
+	})
+
 })

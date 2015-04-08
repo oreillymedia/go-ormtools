@@ -27,3 +27,17 @@ Outer:
 	}
 	return newInts
 }
+
+func UniqueInt64s(oldInts []int64) []int64 {
+	var newInts []int64
+Outer:
+	for _, oldInt := range oldInts {
+		for _, newInt := range newInts {
+			if oldInt == newInt {
+				continue Outer
+			}
+		}
+		newInts = append(newInts, oldInt)
+	}
+	return newInts
+}
