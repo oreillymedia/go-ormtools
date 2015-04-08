@@ -13,3 +13,17 @@ Outer:
 	}
 	return newStrings
 }
+
+func UniqueInts(oldInts []int) []int {
+	var newInts []int
+Outer:
+	for _, oldInt := range oldInts {
+		for _, newInt := range newInts {
+			if oldInt == newInt {
+				continue Outer
+			}
+		}
+		newInts = append(newInts, oldInt)
+	}
+	return newInts
+}
