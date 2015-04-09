@@ -15,7 +15,7 @@ var _ = Describe("Postgres helpers", func() {
 			Expect(ormtools.FromPqStringArray(arr)).To(Equal([]string{"rune", "steve", "zach", "fred", "martin"}))
 		})
 
-		FIt("works on string with commas", func() {
+		It("works on string with commas", func() {
 			arr := "{rune,steve,zach,fred,martin}"
 			Expect(ormtools.FromPqStringArray(arr)).To(Equal([]string{"rune", "steve", "zach", "fred", "martin"}))
 		})

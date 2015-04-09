@@ -1,5 +1,7 @@
 package ormtools
 
+import "strings"
+
 // Unique
 // ---------------------------------------
 
@@ -56,4 +58,14 @@ func CompactStrings(oldStrings []string) []string {
 		}
 	}
 	return newStrings
+}
+
+// Trim
+// ---------------------------------------
+
+func TrimStrings(oldStrings []string, cutset string) []string {
+	for i, oldString := range oldStrings {
+		oldStrings[i] = strings.Trim(oldString, cutset)
+	}
+	return oldStrings
 }

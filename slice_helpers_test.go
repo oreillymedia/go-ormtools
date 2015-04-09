@@ -44,4 +44,13 @@ var _ = Describe("Slice helpers", func() {
 
 	})
 
+	Context("#TrimStrings", func() {
+
+		It("removes empty strings", func() {
+			s := []string{"a ", " b", "c  ", "d", "e"}
+			Expect(ormtools.TrimStrings(s, " ")).To(Equal([]string{"a", "b", "c", "d", "e"}))
+		})
+
+	})
+
 })
