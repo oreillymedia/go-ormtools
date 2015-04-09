@@ -15,7 +15,12 @@ var _ = Describe("Postgres helpers", func() {
 			Expect(ormtools.FromPqStringArray(arr)).To(Equal([]string{"rune", "steve", "zach", "fred", "martin"}))
 		})
 
-		FIt("works on empty array", func() {
+		FIt("works on string with commas", func() {
+			arr := "{rune,steve,zach,fred,martin}"
+			Expect(ormtools.FromPqStringArray(arr)).To(Equal([]string{"rune", "steve", "zach", "fred", "martin"}))
+		})
+
+		It("works on empty array", func() {
 			arr := "{}"
 			Expect(len(ormtools.FromPqStringArray(arr))).To(Equal(0))
 		})
