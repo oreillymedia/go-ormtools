@@ -35,4 +35,13 @@ var _ = Describe("Slice helpers", func() {
 
 	})
 
+	Context("#CompactStrings", func() {
+
+		It("removes empty strings", func() {
+			s := []string{"a", "", "b", "c", "d", "", "e"}
+			Expect(ormtools.CompactStrings(s)).To(Equal([]string{"a", "b", "c", "d", "e"}))
+		})
+
+	})
+
 })

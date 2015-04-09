@@ -1,5 +1,8 @@
 package ormtools
 
+// Unique
+// ---------------------------------------
+
 func UniqueStrings(oldStrings []string) []string {
 	var newStrings []string
 Outer:
@@ -40,4 +43,17 @@ Outer:
 		newInts = append(newInts, oldInt)
 	}
 	return newInts
+}
+
+// Compact
+// ---------------------------------------
+
+func CompactStrings(oldStrings []string) []string {
+	var newStrings []string
+	for _, oldString := range oldStrings {
+		if oldString != "" {
+			newStrings = append(newStrings, oldString)
+		}
+	}
+	return newStrings
 }
