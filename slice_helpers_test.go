@@ -62,4 +62,13 @@ var _ = Describe("Slice helpers", func() {
 
 	})
 
+	Context("#IntsToStrings", func() {
+
+		It("converts ints to strings", func() {
+			i := []int{32, 1, 117, 9}
+			Expect(ormtools.IntsToStrings(i)).To(Equal([]string{"32", "1", "117", "9"}))
+		})
+
+	})
+
 })

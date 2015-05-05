@@ -63,6 +63,13 @@ func StringsToInts(oldStrings []string) (newints []int) {
 	return newints
 }
 
+func IntsToStrings(oldInts []int) (newStrings []string) {
+	for _, i := range oldInts {
+		newStrings = append(newStrings, strconv.Itoa(i))
+	}
+	return newStrings
+}
+
 // Compact
 // ---------------------------------------
 
