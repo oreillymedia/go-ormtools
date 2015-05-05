@@ -1,6 +1,9 @@
 package ormtools
 
-import "strings"
+import (
+	"strconv"
+	"strings"
+)
 
 // Unique
 // ---------------------------------------
@@ -45,6 +48,19 @@ Outer:
 		newInts = append(newInts, oldInt)
 	}
 	return newInts
+}
+
+// Map
+// ---------------------------------------
+
+func StringsToInts(oldStrings []string) (newints []int) {
+	for _, s := range oldStrings {
+		si, err := strconv.Atoi(s)
+		if err == nil {
+			newints = append(newints, si)
+		}
+	}
+	return newints
 }
 
 // Compact
